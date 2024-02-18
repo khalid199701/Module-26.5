@@ -15,14 +15,14 @@ const displayProduct = (products) => {
       <div class="">
         <img
           src=${product.image}
-          class="card-img-top"
+          class="card-img-top "
           loading="lazy"
           alt="..."
         />
       </div>
-      <div class="card-body p-3 p-xl-5">
-        <h3 class="card-title h5">${product.title.slice(0, 10)}</h3>
-        <h5 class="card-title h5">${product.price}</h5>
+      <div class="card-body">
+        <h3 class="card-title">${product.title.slice(0, 10)}</h3>
+        <h5 class="card-title">${product.price}</h5>
         <p class="card-text">
           ${product.description.slice(0, 50)}
         </p>
@@ -71,7 +71,7 @@ const displyDoctors = (doctors) => {
     });
   };
 
-const loadCategory = () => {
+  const loadCategory = () => {
     fetch("https://fakestoreapi.com/products/categories")
       .then((res) => res.json())
       .then((data) => {
@@ -80,8 +80,8 @@ const loadCategory = () => {
           const li = document.createElement("li");
           li.classList.add("dropdown-item");
           li.innerHTML = `
-          <li onclick="loadDoctors('${item}')"> categories/${item}</li>
-            `;
+            <li> <a target="_blank" href="category.html?doctorId=${item}">${item}</a></li>
+          `;
           parent.appendChild(li);
         });
     });

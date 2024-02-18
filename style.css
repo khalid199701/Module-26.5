@@ -2,11 +2,14 @@ body{
     width: 100%;
 }
 #banner{
-    width: 250px;
+    width: 100vw;
     height: 300px;
     border-radius:10px;
     text-align: center;
     padding: 10px;
     flex-wrap: wrap;
 }
-
+.dropdown-item a {
+    text-decoration: none;
+    color: white;
+}
